@@ -1,0 +1,22 @@
+<div class="d-flex flex-column px-5-">
+    <h2 class="text-center">List of shorted urls</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of data; track item.id) {
+            <tr>
+                <th scope="row"></th>
+                <td>{{ item.url }}</td>
+                <td>{{ item.shortUrl }}</td>
+                <td><button type="button" class="btn btn-info" (click)="navigateToInfo(item.id)">View Info</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
