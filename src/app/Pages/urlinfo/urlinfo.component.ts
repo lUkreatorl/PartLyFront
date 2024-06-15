@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UrlService } from '../../services/url.service';
 import { urlMapper } from '../../interfaces/urlMapper';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-urlinfo',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './urlinfo.component.html',
   styleUrls: ['./urlinfo.component.scss']
 })

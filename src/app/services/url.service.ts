@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { urlMapper } from '../interfaces/urlMapper';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +11,11 @@ export class UrlService {
 
   constructor(private http: HttpClient) { }
 
+  addUrl(url: string): Observable<any> {
+    const newUrl = { UrlLink: url };
+    return this.http.post<any>(this.apiUrl, newUrl);
+  }
+  
   getData(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
